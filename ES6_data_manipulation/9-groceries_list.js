@@ -1,20 +1,11 @@
-function cleanSet(set, startString) {
-  const string = [];
+export default function groceriesList() {
+  const groceries = new Map();
 
-  if (
-    typeof set !== 'object'
-    || typeof startString !== 'string'
-    || startString.length === 0
-  ) {
-    return '';
-  }
+  groceries.set('Apples', 10);
+  groceries.set('Tomatoes', 10);
+  groceries.set('Pasta', 1);
+  groceries.set('Rice', 1);
+  groceries.set('Banana', 5);
 
-  for (const item of set) {
-    if (item && item.startsWith(startString)) {
-      string.push(item.slice(startString.length));
-    }
-  }
-  return string.join('-');
+  return groceries;
 }
-
-export default cleanSet;
