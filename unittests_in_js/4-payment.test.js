@@ -13,4 +13,8 @@ describe('sendPaymentRequestToApi function', () => {
     stubUtils.withArgs('SUM', 100, 20).returns(10);
     sendPaymentRequestToApi(100, 20);
     chai.expect(spyConsole.calledOnce).to.be.true;
-
+    chai.expect(spyConsole.calledWith('The total is: 10')).to.be.true;
+    stubUtils.restore()
+    spyConsole.restore();
+  });
+});
